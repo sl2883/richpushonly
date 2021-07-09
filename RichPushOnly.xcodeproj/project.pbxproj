@@ -13,6 +13,7 @@
 		1BEA00762698D33D000E207F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BEA00742698D33D000E207F /* Main.storyboard */; };
 		1BEA00782698D33F000E207F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BEA00772698D33F000E207F /* Assets.xcassets */; };
 		1BEA007B2698D33F000E207F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BEA00792698D33F000E207F /* LaunchScreen.storyboard */; };
+		2967408F8C6277B8C4BA9935 /* Pods_RichPushOnly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 433A28AD763369AB223B88D6 /* Pods_RichPushOnly.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,9 @@
 		1BEA00772698D33F000E207F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1BEA007A2698D33F000E207F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1BEA007C2698D33F000E207F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2D7D4BCEEE498A78853EEB8A /* Pods-RichPushOnly.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RichPushOnly.debug.xcconfig"; path = "Target Support Files/Pods-RichPushOnly/Pods-RichPushOnly.debug.xcconfig"; sourceTree = "<group>"; };
+		433A28AD763369AB223B88D6 /* Pods_RichPushOnly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RichPushOnly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FA9DFC7BB0ED0B226AE2E23 /* Pods-RichPushOnly.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RichPushOnly.release.xcconfig"; path = "Target Support Files/Pods-RichPushOnly/Pods-RichPushOnly.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2967408F8C6277B8C4BA9935 /* Pods_RichPushOnly.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,8 @@
 			children = (
 				1BEA006D2698D33D000E207F /* RichPushOnly */,
 				1BEA006C2698D33D000E207F /* Products */,
+				201B05E3801F70546EBED356 /* Pods */,
+				1DD0DE63531F7B97CD103DC1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +74,24 @@
 			path = RichPushOnly;
 			sourceTree = "<group>";
 		};
+		1DD0DE63531F7B97CD103DC1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				433A28AD763369AB223B88D6 /* Pods_RichPushOnly.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		201B05E3801F70546EBED356 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2D7D4BCEEE498A78853EEB8A /* Pods-RichPushOnly.debug.xcconfig */,
+				7FA9DFC7BB0ED0B226AE2E23 /* Pods-RichPushOnly.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1BEA007F2698D33F000E207F /* Build configuration list for PBXNativeTarget "RichPushOnly" */;
 			buildPhases = (
+				477059A77FD41D9C8047EF30 /* [CP] Check Pods Manifest.lock */,
 				1BEA00672698D33D000E207F /* Sources */,
 				1BEA00682698D33D000E207F /* Frameworks */,
 				1BEA00692698D33D000E207F /* Resources */,
+				251F575B20CAD4D2C33D5FA5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -131,6 +158,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		251F575B20CAD4D2C33D5FA5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RichPushOnly/Pods-RichPushOnly-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RichPushOnly/Pods-RichPushOnly-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RichPushOnly/Pods-RichPushOnly-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		477059A77FD41D9C8047EF30 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RichPushOnly-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1BEA00672698D33D000E207F /* Sources */ = {
@@ -283,6 +352,7 @@
 		};
 		1BEA00802698D33F000E207F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2D7D4BCEEE498A78853EEB8A /* Pods-RichPushOnly.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -302,6 +372,7 @@
 		};
 		1BEA00812698D33F000E207F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7FA9DFC7BB0ED0B226AE2E23 /* Pods-RichPushOnly.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

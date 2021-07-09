@@ -8,9 +8,8 @@
 
 import UserNotifications
 import CleverTapSDK
-import CTNotificationService
 
-class NotificationService: CTNotificationServiceExtension {
+class NotificationService: UNNotificationServiceExtension {
 
     var contentHandler: ((UNNotificationContent) -> Void)?
     var bestAttemptContent: UNMutableNotificationContent?
@@ -18,6 +17,13 @@ class NotificationService: CTNotificationServiceExtension {
     override func didReceive(_ request: UNNotificationRequest, withContentHandler contentHandler: @escaping (UNNotificationContent) -> Void) {
         self.contentHandler = contentHandler
         bestAttemptContent = (request.content.mutableCopy() as? UNMutableNotificationContent)
+        
+        if let bestAttemptContent = bestAttemptContent {
+            // Modify the notification content here...
+            bestAttemptContent.title = "\(bestAttemptContent.title) [modified]"
+            
+            contentHandler(bestAttemptContent)
+        }
         
         if let groupUserDefaults = UserDefaults(suiteName: "group.com.sunny.ctios") {
               if let email = (groupUserDefaults.object(forKey: "email")) as? String {
@@ -31,12 +37,11 @@ class NotificationService: CTNotificationServiceExtension {
         
         CleverTap.setDebugLevel(3)
         CleverTap.sharedInstance()?.recordNotificationViewedEvent(withData: request.content.userInfo)
-        super.didReceive(request, withContentHandler: contentHandler)
     }
     
     func testEvent(email: String) {
         let props: Dictionary<String, Any> = [
-            "Email": email
+            "Email": "email"
         ]
 
         CleverTap.sharedInstance()?.recordEvent("Logged in", withProps: props)

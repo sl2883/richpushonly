@@ -13,14 +13,25 @@ CleverTap.autoIntegrate();
 	- By just sending a push now, with mutable-content flag checked, the breakpoint should hit the receive function of the extension
 - Add CTNotificationService in the pod file for the extension - [ref](https://github.com/CleverTap/CTNotificationService)
 	- pod  'CTNotificationService' and run pod install
-	- Set the NSExtensionPrincipalClass in Info.plist to CTNotificationServiceExtension
+	- Extend NotificationService from CTNotificationServiceExtension
+	- Update the didReceive function as follows
+```swift
+self.contentHandler = contentHandler
+bestAttemptContent = (request.content.mutableCopy() as? UNMutableNotificationContent)
+
+CleverTap.setDebugLevel(3)
+CleverTap.sharedInstance()?.recordNotificationViewedEvent(withData: request.content.userInfo)
+super.didReceive(request, withContentHandler: contentHandler)
+```
+Leave the info.plist as it
+	- Keep $(PRODUCT_MODULE_NAME).NotificationService as value for **NSExtensionPrincipalClass**. Changing this value to CTNotificationServiceExtension stops the debugger from hitting the didReceive function of NotificationService class [This needs to be checked further]
 
 **At this point, the images should start working if**
 - From CleverTap, we're setting the Advanced options -
 	- url for the image (Rich media turned on)
 	- mutable-content checked
 
-Making Push impressions work
+**Making Push impressions work**
 - Update the Podfile so now our service extension also depends on CleverTap SDK
 ```swift
 target 'NotificationServiceExtention'  do
@@ -34,3 +45,30 @@ CleverTap.setDebugLevel(3)
 CleverTap.sharedInstance()?.recordNotificationViewedEvent(withData: request.content.userInfo)
 ```
 
+** For push impressions to go into the correct profile**
+- Add "App groups" capability to main target as well as notification service target
+	- From your App developer account, go to Certificates, Identifiers & Profiles -> Identifiers. Find your app & the app extension identifiers.
+	- Select your app identifier, click on the App Groups and Configure the identifier to be part of an app group.
+	- This step will require you to generate a new provisioning profile for the app identifier. Update the profile in the Xcode to sign your app.
+	- Once the app groups are set, from your login - set the identity to the userdefaults
+```swift
+if let groupUserDefaults = UserDefaults(suiteName: "group.com.sunny.ctios") {
+	groupUserDefaults.set("richpushonly@testrichpushonly.com", forKey: "email")
+}
+```
+
+And in your didReceive function (NotificationService class), read that value and login user - 
+```swift
+if let groupUserDefaults = UserDefaults(suiteName: "group.com.sunny.ctios") {
+	if let email = (groupUserDefaults.object(forKey: "email")) as? String {
+		let profile: Dictionary<String, Any> = ["Email": email]
+		CleverTap.sharedInstance()?.onUserLogin(profile)
+	}
+}
+```
+Now that the user is logged in, call the notificationViewed event -
+```swift
+CleverTap.sharedInstance()?.recordNotificationViewedEvent(withData: request.content.userInfo)
+```
+
+Also, make sure to call super.didReceive so that the images are rendered correctly.

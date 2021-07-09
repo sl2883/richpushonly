@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_RichPushOnly_NotificationServiceExtentionVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_RichPushOnly_NotificationServiceExtentionVersionString[];
+FOUNDATION_EXPORT double Pods_RichPushOnly_NotifServExtn3VersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_RichPushOnly_NotifServExtn3VersionString[];
 

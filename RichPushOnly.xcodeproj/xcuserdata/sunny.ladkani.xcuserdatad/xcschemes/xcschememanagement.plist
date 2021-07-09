@@ -4,15 +4,38 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>NotificationServiceExtention.xcscheme_^#shared#^_</key>
+		<key>NotifServExtn2.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>5</integer>
+			<integer>6</integer>
+		</dict>
+		<key>NotifServExtn3.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>6</integer>
+		</dict>
+		<key>NotificationServiceExtension.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>6</integer>
 		</dict>
 		<key>RichPushOnly.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>6</integer>
+			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>1BEA006A2698D33D000E207F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1BEA00862698D5D6000E207F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

@@ -1,3 +1,4 @@
+
 //
 //  NotificationService.swift
 //  NotificationServiceExtention
@@ -24,8 +25,26 @@ class NotificationService: UNNotificationServiceExtension {
             contentHandler(bestAttemptContent)
         }
         
+        if let groupUserDefaults = UserDefaults(suiteName: "group.com.sunny.ctios") {
+              if let email = (groupUserDefaults.object(forKey: "email")) as? String {
+              let profile: Dictionary<String, Any> = ["Email": email]
+               print("[Clevertap] Email" + " logged in to the service extension")
+               CleverTap.sharedInstance()?.onUserLogin(profile)
+               testEvent(email: email)
+           }
+        }
+
+        
         CleverTap.setDebugLevel(3)
         CleverTap.sharedInstance()?.recordNotificationViewedEvent(withData: request.content.userInfo)
+    }
+    
+    func testEvent(email: String) {
+        let props: Dictionary<String, Any> = [
+            "Email": "email"
+        ]
+
+        CleverTap.sharedInstance()?.recordEvent("Logged in", withProps: props)
     }
     
     override func serviceExtensionTimeWillExpire() {

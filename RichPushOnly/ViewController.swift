@@ -28,6 +28,9 @@ class ViewController: UIViewController {
         ];
 
         CleverTap.sharedInstance()?.onUserLogin(profile);
+        if let groupUserDefaults = UserDefaults(suiteName: "group.com.sunny.ctios") {
+               groupUserDefaults.set("richpushonly@testrichpushonly.com", forKey: "email")
+        }
     }
     
     @IBAction func pv(sender: UIButton) {

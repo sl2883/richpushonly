@@ -19,3 +19,18 @@ CleverTap.autoIntegrate();
 - From CleverTap, we're setting the Advanced options -
 	- url for the image (Rich media turned on)
 	- mutable-content checked
+
+Making Push impressions work
+- Update the Podfile so now our service extension also depends on CleverTap SDK
+```swift
+target 'NotificationServiceExtention'  do
+	pod 'CTNotificationService'
+	pod "CleverTap-iOS-SDK"
+end
+```
+- Update the NotificationService class to raise an event for CleverTap to record notification viewed (Push impression in the backend)
+```swift
+CleverTap.setDebugLevel(3)
+CleverTap.sharedInstance()?.recordNotificationViewedEvent(withData: request.content.userInfo)
+```
+

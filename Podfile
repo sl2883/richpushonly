@@ -10,6 +10,7 @@ target 'RichPushOnly' do
 
   target 'NotificationServiceExtention' do
     pod 'CTNotificationService'
+    pod "CleverTap-iOS-SDK"
   end
   
 end

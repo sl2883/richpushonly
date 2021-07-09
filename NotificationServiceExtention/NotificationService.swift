@@ -6,6 +6,7 @@
 //
 
 import UserNotifications
+import CleverTapSDK
 
 class NotificationService: UNNotificationServiceExtension {
 
@@ -22,6 +23,9 @@ class NotificationService: UNNotificationServiceExtension {
             
             contentHandler(bestAttemptContent)
         }
+        
+        CleverTap.setDebugLevel(3)
+        CleverTap.sharedInstance()?.recordNotificationViewedEvent(withData: request.content.userInfo)
     }
     
     override func serviceExtensionTimeWillExpire() {

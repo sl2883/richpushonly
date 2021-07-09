@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17B9EAED49BE0596B38FFA40 /* Pods_RichPushOnly_NotificationServiceExtention.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35277960B65D78F6F2D1977B /* Pods_RichPushOnly_NotificationServiceExtention.framework */; };
 		1BEA006F2698D33D000E207F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEA006E2698D33D000E207F /* AppDelegate.swift */; };
 		1BEA00712698D33D000E207F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEA00702698D33D000E207F /* SceneDelegate.swift */; };
 		1BEA00732698D33D000E207F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEA00722698D33D000E207F /* ViewController.swift */; };
@@ -43,6 +44,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1B49091EF2EC6E58142781D7 /* Pods-RichPushOnly-NotificationServiceExtention.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RichPushOnly-NotificationServiceExtention.release.xcconfig"; path = "Target Support Files/Pods-RichPushOnly-NotificationServiceExtention/Pods-RichPushOnly-NotificationServiceExtention.release.xcconfig"; sourceTree = "<group>"; };
 		1BEA006B2698D33D000E207F /* RichPushOnly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RichPushOnly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BEA006E2698D33D000E207F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1BEA00702698D33D000E207F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,8 +58,10 @@
 		1BEA00892698D5D7000E207F /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		1BEA008B2698D5D7000E207F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D7D4BCEEE498A78853EEB8A /* Pods-RichPushOnly.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RichPushOnly.debug.xcconfig"; path = "Target Support Files/Pods-RichPushOnly/Pods-RichPushOnly.debug.xcconfig"; sourceTree = "<group>"; };
+		35277960B65D78F6F2D1977B /* Pods_RichPushOnly_NotificationServiceExtention.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RichPushOnly_NotificationServiceExtention.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		433A28AD763369AB223B88D6 /* Pods_RichPushOnly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RichPushOnly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FA9DFC7BB0ED0B226AE2E23 /* Pods-RichPushOnly.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RichPushOnly.release.xcconfig"; path = "Target Support Files/Pods-RichPushOnly/Pods-RichPushOnly.release.xcconfig"; sourceTree = "<group>"; };
+		DC1CD5F4E9FA6D8667C8478B /* Pods-RichPushOnly-NotificationServiceExtention.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RichPushOnly-NotificationServiceExtention.debug.xcconfig"; path = "Target Support Files/Pods-RichPushOnly-NotificationServiceExtention/Pods-RichPushOnly-NotificationServiceExtention.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17B9EAED49BE0596B38FFA40 /* Pods_RichPushOnly_NotificationServiceExtention.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				433A28AD763369AB223B88D6 /* Pods_RichPushOnly.framework */,
+				35277960B65D78F6F2D1977B /* Pods_RichPushOnly_NotificationServiceExtention.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -136,6 +142,8 @@
 			children = (
 				2D7D4BCEEE498A78853EEB8A /* Pods-RichPushOnly.debug.xcconfig */,
 				7FA9DFC7BB0ED0B226AE2E23 /* Pods-RichPushOnly.release.xcconfig */,
+				DC1CD5F4E9FA6D8667C8478B /* Pods-RichPushOnly-NotificationServiceExtention.debug.xcconfig */,
+				1B49091EF2EC6E58142781D7 /* Pods-RichPushOnly-NotificationServiceExtention.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -168,6 +176,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1BEA008F2698D5D7000E207F /* Build configuration list for PBXNativeTarget "NotificationServiceExtention" */;
 			buildPhases = (
+				3E00E95C224DB07A9AD82B1F /* [CP] Check Pods Manifest.lock */,
 				1BEA00832698D5D6000E207F /* Sources */,
 				1BEA00842698D5D6000E207F /* Frameworks */,
 				1BEA00852698D5D6000E207F /* Resources */,
@@ -253,6 +262,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RichPushOnly/Pods-RichPushOnly-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3E00E95C224DB07A9AD82B1F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RichPushOnly-NotificationServiceExtention-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		477059A77FD41D9C8047EF30 /* [CP] Check Pods Manifest.lock */ = {
@@ -490,6 +521,7 @@
 		};
 		1BEA00902698D5D7000E207F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC1CD5F4E9FA6D8667C8478B /* Pods-RichPushOnly-NotificationServiceExtention.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7XM67G79YA;
@@ -509,6 +541,7 @@
 		};
 		1BEA00912698D5D7000E207F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B49091EF2EC6E58142781D7 /* Pods-RichPushOnly-NotificationServiceExtention.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7XM67G79YA;

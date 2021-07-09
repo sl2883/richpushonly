@@ -8,4 +8,8 @@ target 'RichPushOnly' do
 
   # Pods for RichPushOnly
 
+  target 'NotificationServiceExtention' do
+    pod 'CTNotificationService'
+  end
+  
 end

@@ -62,5 +62,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>CleverTapAccountID</key>
+	<string>464-49W-WR6Z</string>
+	<key>CleverTapToken</key>
+	<string>0c4-464</string>
 </dict>
 </plist>

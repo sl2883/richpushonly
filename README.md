@@ -13,6 +13,7 @@ CleverTap.autoIntegrate();
 	- By just sending a push now, with mutable-content flag checked, the breakpoint should hit the receive function of the extension
 - Add CTNotificationService in the pod file for the extension - [ref](https://github.com/CleverTap/CTNotificationService)
 	- pod  'CTNotificationService' and run pod install
+	- Ensure that CT token, id are in Info.plist of the extension
 	- Extend NotificationService from CTNotificationServiceExtension
 	- Update the didReceive function as follows
 ```swift
@@ -45,7 +46,7 @@ CleverTap.setDebugLevel(3)
 CleverTap.sharedInstance()?.recordNotificationViewedEvent(withData: request.content.userInfo)
 ```
 
-** For push impressions to go into the correct profile**
+**For push impressions to go into the correct profile**
 - Add "App groups" capability to main target as well as notification service target
 	- From your App developer account, go to Certificates, Identifiers & Profiles -> Identifiers. Find your app & the app extension identifiers.
 	- Select your app identifier, click on the App Groups and Configure the identifier to be part of an app group.

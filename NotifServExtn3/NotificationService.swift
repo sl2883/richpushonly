@@ -10,6 +10,8 @@ import UserNotifications
 import CleverTapSDK
 import CTNotificationService
 
+import CleverTapSDK
+
 class NotificationService: CTNotificationServiceExtension {
 
     var contentHandler: ((UNNotificationContent) -> Void)?

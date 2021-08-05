@@ -135,22 +135,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "EFF48071-7428-410B-A169-706370A24350"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NotifServExtn3/NotificationService.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "didReceive(_:withContentHandler:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "855FD861-40FE-4341-8061-B6E2F455BA6A"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -190,9 +174,9 @@
             filePath = "NotifServExtn3/NotificationService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "testEvent(email:)"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "testEvent(identity:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

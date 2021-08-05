@@ -22,26 +22,27 @@ class NotificationService: CTNotificationServiceExtension {
         bestAttemptContent = (request.content.mutableCopy() as? UNMutableNotificationContent)
         
         if let groupUserDefaults = UserDefaults(suiteName: "group.com.sunny.ctios") {
-              if let email = (groupUserDefaults.object(forKey: "email")) as? String {
-              let profile: Dictionary<String, Any> = ["Email": email]
-               print("[Clevertap] Email" + " logged in to the service extension")
+              if let identity = (groupUserDefaults.object(forKey: "Identity")) as? String {
+              let profile: Dictionary<String, Any> = ["Identity": identity]
+               print("[Clevertap] Identity" + " logged in to the service extension")
                CleverTap.sharedInstance()?.onUserLogin(profile)
-               testEvent(email: email)
+               testEvent(identity: identity)
            }
         }
 
+        
         
         CleverTap.setDebugLevel(3)
         CleverTap.sharedInstance()?.recordNotificationViewedEvent(withData: request.content.userInfo)
         super.didReceive(request, withContentHandler: contentHandler)
     }
     
-    func testEvent(email: String) {
+    func testEvent(identity: String) {
         let props: Dictionary<String, Any> = [
-            "Email": email
+            "Identity": identity
         ]
 
-        CleverTap.sharedInstance()?.recordEvent("Logged in", withProps: props)
+        CleverTap.sharedInstance()?.recordEvent("Logged in notification service", withProps: props)
     }
     
     override func serviceExtensionTimeWillExpire() {

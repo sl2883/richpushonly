@@ -54,17 +54,19 @@ CleverTap.sharedInstance()?.recordNotificationViewedEvent(withData: request.cont
 	- Once the app groups are set, from your login - set the identity to the userdefaults
 ```swift
 if let groupUserDefaults = UserDefaults(suiteName: "group.com.sunny.ctios") {
-	groupUserDefaults.set("richpushonly@testrichpushonly.com", forKey: "email")
+       groupUserDefaults.set(identity, forKey: "identity")
 }
 ```
 
 And in your didReceive function (NotificationService class), read that value and login user - 
 ```swift
 if let groupUserDefaults = UserDefaults(suiteName: "group.com.sunny.ctios") {
-	if let email = (groupUserDefaults.object(forKey: "email")) as? String {
-		let profile: Dictionary<String, Any> = ["Email": email]
-		CleverTap.sharedInstance()?.onUserLogin(profile)
-	}
+      if let identity = (groupUserDefaults.object(forKey: "Identity")) as? String {
+      let profile: Dictionary<String, Any> = ["Identity": identity]
+       print("[Clevertap] Identity" + " logged in to the service extension")
+       CleverTap.sharedInstance()?.onUserLogin(profile)
+       testEvent(identity: identity)
+   }
 }
 ```
 Now that the user is logged in, call the notificationViewed event -

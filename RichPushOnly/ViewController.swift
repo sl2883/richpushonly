@@ -18,19 +18,34 @@ class ViewController: UIViewController {
     @IBAction func login1(sender: UIButton) {
         print("login1");
         
+        let identity = "a3443535";
+        
         let profile: Dictionary<String, Any> = [
             //Update pre-defined profile properties
-            "Name": "Rich Push Only",
-            "Email": "richpushonly@testrichpushonly.com",
+            "Name": "A 34 User",
+            "Email": "a3443535@test.com",
+            "Identity": identity,
             //Update custom profile properties
             "Plan type": "Silver",
-            "Favorite Food": "Pizza"
+            "Favorite Food": "Pizza",
+            "Phone": "+15109447171"
         ];
+        
 
         CleverTap.sharedInstance()?.onUserLogin(profile);
         if let groupUserDefaults = UserDefaults(suiteName: "group.com.sunny.ctios") {
-               groupUserDefaults.set("richpushonly@testrichpushonly.com", forKey: "email")
+               groupUserDefaults.set(identity, forKey: "identity")
         }
+        
+        testEvent(identity: identity)
+    }
+    
+    func testEvent(identity: String) {
+        let props: Dictionary<String, Any> = [
+            "Identity": identity
+        ]
+
+        CleverTap.sharedInstance()?.recordEvent("Logged in main", withProps: props)
     }
     
     @IBAction func pv(sender: UIButton) {

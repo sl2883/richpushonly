@@ -75,3 +75,9 @@ CleverTap.sharedInstance()?.recordNotificationViewedEvent(withData: request.cont
 ```
 
 Also, make sure to call super.didReceive so that the images are rendered correctly.
+
+Few things to keep in mind -
+- Payload needs to have "mutable-content": 1
+- iOS version of Service extension should be less than equal to the iOS version of the targeted device. 
+- Restart of the device may be required
+- Apple supports Service extension from iOS 10 

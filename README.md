@@ -65,7 +65,6 @@ if let groupUserDefaults = UserDefaults(suiteName: "group.com.sunny.ctios") {
       let profile: Dictionary<String, Any> = ["Identity": identity]
        print("[Clevertap] Identity" + " logged in to the service extension")
        CleverTap.sharedInstance()?.onUserLogin(profile)
-       testEvent(identity: identity)
    }
 }
 ```

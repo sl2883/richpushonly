@@ -8,7 +8,7 @@
 import UIKit
 import CleverTapSDK
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, CleverTapInboxViewControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +38,7 @@ class ViewController: UIViewController {
         }
         
         testEvent(identity: identity)
+        launchCTInbox()
     }
     
     func testEvent(identity: String) {
@@ -46,6 +47,25 @@ class ViewController: UIViewController {
         ]
 
         CleverTap.sharedInstance()?.recordEvent("Logged in main", withProps: props)
+    }
+    
+    func launchCTInbox () {
+        // config the style of App Inbox Controller
+            let style = CleverTapInboxStyleConfig.init()
+            style.title = "App Inbox"
+            style.backgroundColor = UIColor.lightGray
+            style.messageTags = ["tag1", "tag2"]
+            style.navigationBarTintColor = UIColor.gray
+            style.navigationTintColor = UIColor.blue
+            style.tabUnSelectedTextColor = UIColor.black
+            style.tabSelectedTextColor = UIColor.white
+            style.tabSelectedBgColor = UIColor.black
+            style.firstTabTitle = "My First Tab"
+            
+            if let inboxController = CleverTap.sharedInstance()?.newInboxViewController(with: style, andDelegate: self) {
+                let navigationController = UINavigationController.init(rootViewController: inboxController)
+                self.present(navigationController, animated: true, completion: nil)
+          }
     }
     
     @IBAction func pv(sender: UIButton) {

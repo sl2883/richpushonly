@@ -18,6 +18,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         registerForPush();
         // Override point for customization after application launch.
+        
+        CleverTap.sharedInstance()?.initializeInbox(callback: ({ (success) in
+                let messageCount = CleverTap.sharedInstance()?.getInboxMessageCount()
+                let unreadCount = CleverTap.sharedInstance()?.getInboxMessageUnreadCount()
+                print("Inbox Message:\(String(describing: messageCount))/\(String(describing: unreadCount)) unread")
+         }))
+        
         return true
     }
 
